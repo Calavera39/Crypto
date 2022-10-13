@@ -5,19 +5,25 @@ import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 
 
+
 const SignUp = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
-    const {signUp} = UserAuth()
+    const { signUp, user } = UserAuth()
     const navigate = useNavigate()
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setError('')
+        
+        
         try {
             await signUp(email, password)
+           if(user?.email) {
+            navigate('/account')
+           }
             
         } catch (e) {
             setError(e.message)
@@ -41,14 +47,16 @@ const SignUp = () => {
                 <div className='my-4'>
                     <label>Password</label>
                     <div className='my-2 w-full relative rounded-2xl shadow-xl'>
-                        <input onChange={(e) => setPassword(e.target.value)} className='w-full p-2 bg-primary border border-input rounded-2xl' type='password' /> 
+                        <input minLength='6' onChange={(e) => setPassword(e.target.value)} className='w-full p-2 bg-primary border border-input rounded-2xl' type='password' /> 
                         <AiFillLock className='absolute right-2 top-3 text-gray-400'/>
                         
                     </div>
                 </div>
                 <button className='w-full my-2 p-3 bg-button rounded-2xl shadow-xl'>Sign Up</button>
             </form>
+            
             <p>Already have an account? <Link className='text-accent' to='/signin'>Sign In</Link></p>
+            <p>Bug: to sign up correctly press the button 2 times</p>
         </div>
         </div>
     );

@@ -8,9 +8,9 @@ const Footer = () => {
         <div className='rounded-div mt-8 text-primary p-4 pb-0'>
             <div className='flex flex-col items-center'>
                 <div className='flex justify-around w-[10rem]'>
-                    <AiOutlineInstagram size={25}/>
-                    <FaGithub size={25}/>
-                    <FaTelegram size={25}/>
+                    <a target='_blank' rel='noreferrer' href='https://www.instagram.com/calavera39/'><AiOutlineInstagram size={25}/></a>
+                    <a target='_blank' rel='noreferrer' href='https://github.com/Calavera39'><FaGithub size={25}/></a>
+                    <a target='_blank' rel='noreferrer' href='https://telegram.me/Calavera39'><FaTelegram size={25}/></a>
                 </div>
                 <div className='mt-5'>
                     <ThemeToggle />

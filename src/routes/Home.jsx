@@ -5,8 +5,8 @@ import Trending from '../components/Trending';
 const Home = (props) => {
     return (
         <div>
-            <CoinSearch coins={props.coins}/>
-            <Trending />
+            <CoinSearch quantity={props.quantity} setQuantity={props.setQuantity} coins={props.coins}/>
+            <Trending coins={props.coins}/>
         </div>
     );
 }

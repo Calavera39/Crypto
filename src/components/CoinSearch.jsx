@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 
 import CoinItem from './CoinItem';
 
-const CoinSearch = ({coins}) => {
+const CoinSearch = ({coins, quantity, setQuantity}) => {
     const [searchText, setSearchText] = useState('')
+   
 
     const handleSearch = (e) => {
         setSearchText(e.target.value)
@@ -16,8 +17,11 @@ const CoinSearch = ({coins}) => {
                 <form>
                     <input 
                     className='w-full bg-primary border border-input px-4 py-2 rounded-2xl shadow-xl'
-                    value={searchText} onChange={handleSearch} type='text' placeholder='Search a coin' />
+                    value={searchText} onChange={handleSearch} type='text'  placeholder='Search a coin' />
                 </form>
+                <input onChange={(e) => setQuantity(e.target.value)}
+                    className='w-[6rem] bg-primary border border-input px-4 my-4 md:my-0 py-2 rounded-2xl shadow-xl'
+                    value={quantity} type='text' placeholder='Quantity' />
             </div>
             <table className='w-full border-collapse text-center'>
                 <thead>

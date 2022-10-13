@@ -15,8 +15,9 @@ import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
   const [coins, setCoins] = useState([])
+  const [quantity, setQuantity] = useState(10)
 
-  const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=true'
+  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${quantity}&page=1&sparkline=true`
 
   useEffect(() => {
     axious.get(url).then((response) => {
@@ -30,7 +31,7 @@ function App() {
       <AuthContextProvider>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home coins={coins} />} />
+          <Route path="/" element={<Home quantity={quantity} setQuantity={setQuantity} coins={coins} />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/account" element={<Account />} />
