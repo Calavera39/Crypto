@@ -10,19 +10,22 @@ import axious from 'axios'
 import CoinPage from './routes/CoinPage'
 import Footer from "./components/Footer";
 import { AuthContextProvider } from "./context/AuthContext";
-
+import {useNavigate} from 'react-router-dom'
 
 
 function App() {
   const [coins, setCoins] = useState([])
   const [quantity, setQuantity] = useState(10)
+  const navigate = useNavigate()
 
   const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${quantity}&page=1&sparkline=true`
 
   useEffect(() => {
     axious.get(url).then((response) => {
+      navigate('/')
       setCoins(response.data)
       console.log(response.data)
+
     })
     }, [url])
 

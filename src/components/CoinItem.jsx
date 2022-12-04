@@ -33,7 +33,7 @@ const CoinItem = ({coin}) => {
             <td onClick={saveCoins}>{savedCoins ? <AiFillStar /> : <AiOutlineStar />}</td>
             <td>{coin.market_cap_rank}</td>
             <td>
-                <Link to={`/coin/${coin.id}`}>
+                <Link to={`coin/${coin.id}`}>
                     <div className='flex items-center'>
                         <img className='w-6 mr-2 rounded-full' src={coin.image} alt={coin.id}/>
                         <p className='hidden sm:table-cell'>{coin.name}</p>
