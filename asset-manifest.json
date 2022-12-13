@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/calavera39.github.io/Cryptostat-deployed/static/css/main.a36dd309.css",
+    "main.js": "/calavera39.github.io/Cryptostat-deployed/static/js/main.b42b447f.js",
+    "index.html": "/calavera39.github.io/Cryptostat-deployed/index.html",
+    "main.a36dd309.css.map": "/calavera39.github.io/Cryptostat-deployed/static/css/main.a36dd309.css.map",
+    "main.b42b447f.js.map": "/calavera39.github.io/Cryptostat-deployed/static/js/main.b42b447f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a36dd309.css",
+    "static/js/main.b42b447f.js"
+  ]
+}
